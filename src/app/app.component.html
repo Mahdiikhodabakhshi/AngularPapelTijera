@@ -1,0 +1,83 @@
+
+
+<div class="container mt-2" style="height: 100vh;">
+
+<div class="row mb-5" style="height: 25rem;">
+    <div class="col  text-center " style="font-weight: bold;">
+        
+      
+        <span class="text-warning">{{ganajuego}}</span>
+        
+
+        <div>
+           <img class="" src=" {{img}} " alt="">
+
+           
+        </div>  
+    </div>
+
+
+
+
+
+    <div class="col">
+        <div>
+             <h3>CPU</h3>
+             <h4>pontos: {{puntoscpu}} </h4>
+             <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: {{barracpu}}%"></div>
+              </div>
+              <div class="btn-group my-2 w-100 " role="group" aria-label="Basic example">
+                <button type="button" [ngClass]="btncpu[0]" class="btn btn-primary   disabled">PAPEL</button>
+                <button type="button" [ngClass]="btncpu[1]" class="btn btn-primary  disabled">TIJERA</button>
+                <button type="button" [ngClass]="btncpu[2]" class="btn btn-primary  disabled">PIEDRA</button>
+                <button type="button" [ngClass]="btncpu[3]" class="btn btn-primary  disabled">LAGARTO</button>
+                <button type="button" [ngClass]="btncpu[4]" class="btn btn-primary  disabled">SPOOK</button>
+              </div>
+              <div> <a href=""></a></div>
+        </div>
+        <div style="margin: 2rem 0; font-weight: bolder; color: #264653;" class="justify-content-center d-flex"> {{winround}}</div>
+        <div>
+          <h3>JUGADOR</h3>
+          <h4>pontos:{{puntosj}} </h4>
+          <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+             <div class="progress-bar" style="width: {{barraj}}%"></div>
+           </div>
+           <div class="btn-group  w-100 mt-2 " role="group" aria-label="Basic example">
+             <button type="button" (click)="iniciojuego(0)" [ngClass]="btnjugador[0]" class="btn btn-primary {{btnj}}">PAPEL</button>
+             <button type="button" (click)="iniciojuego(1)" [ngClass]="btnjugador[1]" class="btn btn-primary {{btnj}}">TIJERA</button>
+             <button type="button" (click)="iniciojuego(2)" [ngClass]="btnjugador[2]" class="btn btn-primary {{btnj}}">PIEDRA</button>
+             <button type="button" (click)="iniciojuego(3)" [ngClass]="btnjugador[3]" class="btn btn-primary {{btnj}}">LAGARTO</button>
+             <button type="button" (click)="iniciojuego(4)" [ngClass]="btnjugador[4]" class="btn btn-primary {{btnj}}">SPOOK</button>
+           </div>
+           <div> <a href=""></a></div>
+     </div>
+
+
+
+    </div>
+</div>
+
+<div class="row justify-content-between    "  >
+  <div class="col-4 justify-content-center w-50 " style="margin-left: 1.8rem; " >
+    <div class="form-control text-center mi-rondas">
+      <div class="my-2" ><h3>Numero de la ronda</h3></div>
+      <p>&lpar; valor por defecto es 5 ronda &rpar;</p>
+      <div class="justify-content-between d-flex">
+        <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" >
+        <label class="btn btn-secondary {{dis}} " [ngClass]="Ronda[0]"  (click)="partido(2)" for="option4">2 partida</label>
+        <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" >
+        <label class="btn btn-secondary {{dis}} " [ngClass]="Ronda[1]"  (click)="partido(5)" for="option4">5 partida</label>
+        <input type="radio" class="btn-check " name="options" id="option1" autocomplete="off" >
+        <label class="btn btn-secondary {{dis}}" [ngClass]="Ronda[2]"  (click)="partido(10)" for="option4">10 partida</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-4">
+    <button type="button" (click)="reiniciar()" class="btn btn-danger" style="margin-top: 2rem; margin-left: 2.5rem; padding: 1rem 4rem;">Reiniciar</button>
+
+  </div>
+</div>
+</div>
